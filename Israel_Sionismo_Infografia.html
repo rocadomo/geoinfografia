@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Israel, Sionismo y el Conflicto — Análisis Documentado</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0E0E0E;
+    --paper: #F5F0E8;
+    --red: #C0392B;
+    --red-light: #FDEDEC;
+    --navy: #0D2137;
+    --blue: #1A3A5C;
+    --blue-mid: #2E6DA4;
+    --gold: #C9A84C;
+    --muted: #666;
+    --border: #D4C9B0;
+    --white: #FFFFFF;
+    --green-light: #E8F5E9;
+    --blue-light: #EAF2FB;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--navy);
+    color: white;
+    padding: 60px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,57,43,0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--gold) 50%, var(--blue-mid) 100%);
+  }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 52px);
+    line-height: 1.15;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: clamp(14px, 2.5vw, 18px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    max-width: 620px;
+    margin-bottom: 28px;
+  }
+  .hero-disclaimer {
+    background: rgba(255,255,255,0.07);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    max-width: 620px;
+    line-height: 1.6;
+  }
+
+  /* ===== NAV ===== */
+  .toc {
+    background: var(--blue);
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .toc a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s;
+  }
+  .toc a:hover { background: rgba(255,255,255,0.15); color: white; }
+
+  /* ===== MAIN LAYOUT ===== */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-wrap {
+    margin: 40px 0 0;
+  }
+  .section-header {
+    background: var(--navy);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: clamp(14px, 3vw, 18px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section-body {
+    background: white;
+    padding: 28px 24px;
+    border: 1px solid var(--border);
+    border-top: none;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(16px, 3vw, 20px);
+    color: var(--navy);
+    margin: 24px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+  h3:first-child { margin-top: 0; }
+
+  p {
+    margin-bottom: 14px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #1a1a1a;
+    text-align: justify;
+  }
+
+  .source-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 2px;
+    margin: 8px 0 16px;
+    display: block;
+    line-height: 1.7;
+    border-left: 3px solid var(--border);
+  }
+
+  .callout {
+    background: var(--red-light);
+    border-left: 4px solid var(--red);
+    padding: 14px 16px;
+    margin: 16px 0;
+    font-size: clamp(13px, 2.5vw, 15px);
+    font-style: italic;
+    color: #333;
+  }
+
+  /* ===== TABLES — RESPONSIVE ===== */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    font-size: clamp(12px, 2vw, 14px);
+  }
+  thead tr {
+    background: var(--navy);
+    color: white;
+  }
+  thead th {
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  tbody tr:nth-child(odd) { background: var(--blue-light); }
+  tbody tr:nth-child(even) { background: white; }
+  tbody tr.red-row { background: var(--red-light); }
+  tbody tr.green-row { background: var(--green-light); }
+  tbody td {
+    padding: 10px 14px;
+    vertical-align: top;
+    line-height: 1.55;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  tbody td:first-child {
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  /* ===== FACTS GRID ===== */
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .fact-card {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    padding: 16px;
+    background: white;
+  }
+  .fact-card .fc-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .fact-card .fc-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+  .fact-card .fc-src {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* ===== PARADOX BOX ===== */
+  .paradox {
+    background: var(--navy);
+    color: white;
+    padding: 24px;
+    margin: 24px 0;
+    position: relative;
+  }
+  .paradox::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--gold);
+    position: absolute;
+    top: -10px; left: 12px;
+    line-height: 1;
+    opacity: 0.6;
+  }
+  .paradox p {
+    font-size: clamp(14px, 2.5vw, 17px);
+    color: rgba(255,255,255,0.9);
+    padding-left: 36px;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .paradox .paradox-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    padding-left: 36px;
+    margin-bottom: 8px;
+  }
+
+  /* ===== CONCLUSIONS ===== */
+  .conclusions {
+    background: var(--navy);
+    color: white;
+    margin: 40px 0 0;
+    padding: 32px 24px;
+  }
+  .conclusions h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .conclusion-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .conclusion-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .c-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 32px;
+  }
+  .c-text {
+    font-size: clamp(13px, 2.5vw, 15px);
+    color: rgba(255,255,255,0.88);
+    line-height: 1.65;
+  }
+
+  /* ===== SOURCES PAGE ===== */
+  .sources-section {
+    background: #f0ebe0;
+    padding: 32px 24px;
+    margin-top: 0;
+    border-top: 4px solid var(--navy);
+  }
+  .sources-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3.5vw, 24px);
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  .source-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #333;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.7;
+  }
+  .source-item strong { color: var(--navy); }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ===== MOBILE SCROLL HINT ===== */
+  .scroll-hint {
+    display: none;
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    text-align: right;
+    margin-bottom: 4px;
+  }
+  @media (max-width: 600px) {
+    .scroll-hint { display: block; }
+    .section-body { padding: 20px 14px; }
+    .hero { padding: 40px 16px 36px; }
+    .conclusions { padding: 24px 16px; }
+    .sources-section { padding: 24px 16px; }
+    .container { padding: 0 12px; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  .section-wrap {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .section-wrap.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ===== STRIPE ACCENT ===== */
+  .stripe {
+    height: 6px;
+    background: linear-gradient(90deg, var(--red) 0%, var(--gold) 33%, var(--blue-mid) 66%, var(--navy) 100%);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <p class="hero-label">Análisis Geopolítico · Febrero 2026</p>
+    <h1>Israel, Sionismo <em>y el Conflicto</em></h1>
+    <p class="hero-sub">Un análisis documentado: identidad, poder y violencia. Desde los orígenes de Netanyahu hasta Gaza — con fuentes verificables.</p>
+    <div class="hero-disclaimer">
+      Este documento no busca incitar odio hacia ningún grupo religioso o étnico. Su objetivo es el análisis político e histórico basado en fuentes académicas, organismos internacionales y declaraciones públicas documentadas. Todos los datos son contrastables.
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<nav class="toc">
+  <a href="#s1">1 · Netanyahu</a>
+  <a href="#s2">2 · Ashkenazis y Mizrahim</a>
+  <a href="#s3">3 · Gaza</a>
+  <a href="#s4">4 · Apartheid</a>
+  <a href="#s5">5 · Lobby en Washington</a>
+  <a href="#conclusiones">Conclusiones</a>
+  <a href="#fuentes">Fuentes</a>
+</nav>
+
+<div class="container">
+
+  <!-- ===== SECCIÓN 1 ===== -->
+  <div class="section-wrap" id="s1">
+    <div class="section-header">
+      <span class="section-num">1</span>
+      <span class="section-title">Benjamin Netanyahu: Nombre, Origen e Ideología</span>
+    </div>
+    <div class="section-body">
+
+      <h3>El apellido original: Mileikowsky</h3>
+      <p>El nombre real de la familia Netanyahu es <strong>Mileikowsky</strong>, de origen polaco. El cambio de apellido fue una decisión política deliberada: "Netanyahu" en hebreo significa "Dios ha dado", y fue adoptado como parte de la política sionista de hebraización de nombres europeos para construir una nueva identidad nacional. Esta práctica era común entre los líderes sionistas llegados a Palestina desde Europa del Este.</p>
+      <span class="source-tag">Fuente [1]: Mondoweiss — "Netanyahu's grandfather was a Zionist activist who changed family name", 2012. Fuente [2]: Ha'aretz — "Benzion Netanyahu: Father of the Nation?", 2012.</span>
+
+      <h3>Genealogía ideológica — tres generaciones</h3>
+      <p class="scroll-hint">← desliza para ver toda la tabla →</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Generación</th>
+              <th>Nombre</th>
+              <th>Rol ideológico documentado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Abuelo</td>
+              <td>Nathan Mileikowsky</td>
+              <td>Rabino polaco, activista sionista. Recorrió Europa y EE.UU. dando discursos por el sionismo. Asistente habitual a congresos sionistas internacionales.</td>
+            </tr>
+            <tr>
+              <td>Padre</td>
+              <td>Benzion Netanyahu (Mileikowsky)</td>
+              <td>Director ejecutivo de la New Zionist Organization of America. Ideólogo del Sionismo Revisionista de Jabotinsky, la rama más expansionista y militarista. Académico e historiador.</td>
+            </tr>
+            <tr class="red-row">
+              <td>Hijo</td>
+              <td>Benjamin Netanyahu</td>
+              <td>Primer Ministro de Israel. Tercera generación de sionismo revisionista. Orden de arresto emitida por la Corte Penal Internacional (noviembre 2024) por crímenes de guerra y crímenes de lesa humanidad.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="source-tag">Fuente [1, 2]: Mondoweiss y Ha'aretz, citados arriba. Fuente [3]: Shlaim, Avi — "The Iron Wall: Israel and the Arab World". W.W. Norton, 2000.</span>
+
+      <h3>El Sionismo Revisionista de Jabotinsky</h3>
+      <p>El padre de Netanyahu era seguidor de <strong>Ze'ev Jabotinsky</strong>, fundador del Sionismo Revisionista, una corriente que propugnaba la creación de un Gran Israel a ambos lados del río Jordán, por medios militares si era necesario. Las referencias a este movimiento vienen de fuentes israelíes de primer orden:</p>
+
+      <div class="callout">
+        David Ben-Gurion, primer ministro israelí y fundador del Estado, llamó a Jabotinsky públicamente <strong>"Vladimir Hitler"</strong>. El diplomático israelí Abba Eban lo describió como un admirador del fascismo italiano. Mussolini llegó a llamarlo "el ciudadano fascista". Estas citas están en registros históricos y biográficos israelíes.
+      </div>
+      <span class="source-tag">Fuente [3]: Shlaim, Avi — "The Iron Wall: Israel and the Arab World". W.W. Norton, 2000. ISBN: 978-0393321128. Fuente [4]: Brenner, Lenni — "Zionism in the Age of the Dictators". Croom Helm, 1983. Disponible en marxists.org.</span>
+
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN 2 ===== -->
+  <div class="section-wrap" id="s2">
+    <div class="section-header">
+      <span class="section-num">2</span>
+      <span class="section-title">Ashkenazis, Mizrahim y la Pregunta del Antisemitismo</span>
+    </div>
+    <div class="section-body">
+
+      <h3>Los distintos grupos judíos</h3>
+      <p>No existe un único grupo judío homogéneo. Las diferencias son genéticas, culturales, lingüísticas e históricas entre los tres grupos principales:</p>
+
+      <p class="scroll-hint">← desliza para ver toda la tabla →</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Grupo</th>
+              <th>Origen</th>
+              <th>Idioma</th>
+              <th>Relación con Palestina histórica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ashkenazis</td>
+              <td>Europa del Este: Polonia, Rusia, Alemania, Ucrania</td>
+              <td>Yiddish (alemán medieval + influencia eslava)</td>
+              <td>Inmigrantes a Palestina desde fines del siglo XIX. Fundadores del Estado de Israel. Entre 40–60% de su genoma es de origen europeo.</td>
+            </tr>
+            <tr>
+              <td>Sefardíes</td>
+              <td>España. Expulsados en 1492. Se dispersaron por el Imperio Otomano, Marruecos, Turquía.</td>
+              <td>Ladino (español medieval + hebreo)</td>
+              <td>Comunidades históricas en el Mediterráneo. Llevaban siglos en Oriente Medio antes del sionismo político moderno.</td>
+            </tr>
+            <tr class="green-row">
+              <td>Mizrahim</td>
+              <td>Iraq, Irán, Yemen, Siria, Egipto. Nunca se desplazaron de Oriente Medio.</td>
+              <td>Árabe, persa. Hebreo bíblico.</td>
+              <td>Los más cercanos genéticamente a los palestinos. Descendientes directos de las poblaciones cananeas históricas. 45% de la población judía israelí actual.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="source-tag">Fuente [5]: Sand, Shlomo — "The Invention of the Jewish People". Verso Books, 2009. ISBN: 978-1844674220. Fuente [6]: Ostrer, Harry — "Legacy: A Genetic History of the Jewish People". Oxford University Press, 2012. ISBN: 978-0195379617. Fuente [7]: Behar, Doron M. et al. — "The genome-wide structure of the Jewish people". Nature, Vol. 466, pp. 238-242, 2010. DOI: 10.1038/nature09103.</span>
+
+      <h3>La paradoja del término "antisemitismo"</h3>
+
+      <div class="paradox">
+        <p class="paradox-label">Paradoja histórica documentada</p>
+        <p>El término "semita" refiere a pueblos de origen lingüístico-cultural del Oriente Próximo: árabes, arameos, hebreos históricos. Los estudios genéticos muestran que los Ashkenazis, principales fundadores del sionismo político y del Estado de Israel, tienen entre el 40% y 60% de ancestría europea, siendo el grupo con menor porcentaje de genoma semítico dentro del judaísmo mundial. Los palestinos y los Mizrahim comparten una ascendencia genética muy cercana a la población cananea histórica. En consecuencia, la acusación de "antisemitismo" dirigida contra los palestinos —quienes son genéticamente semitas— por parte de un movimiento político fundado por judíos de origen europeo constituye una paradoja histórica y semántica verificable.</p>
+      </div>
+      <span class="source-tag">Fuente [7]: Behar et al. — Nature, 2010, citado arriba.</span>
+
+      <h3>Discriminación interna: los Mizrahim en Israel</h3>
+      <p>Los Mizrahim representan aproximadamente el 45% de la población judía israelí, pero <strong>nunca han tenido un Primer Ministro</strong>. Solo un presidente sefardí en toda la historia del Estado (Yitzhak Navon, 1978-1983). Las declaraciones de los líderes fundadores sobre los Mizrahim están en archivos históricos israelíes:</p>
+
+      <p class="scroll-hint">← desliza para ver toda la tabla →</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Líder fundador</th>
+              <th>Declaración documentada sobre los Mizrahim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="red-row">
+              <td>David Ben-Gurion<br><em>Primer Ministro</em></td>
+              <td>Describió a los judíos llegados del norte de África como "generación de baja calidad" y "escoria". Sugirió construirles letrinas fuera de las casas porque "no saben usar higiénicamente un baño en casa".</td>
+            </tr>
+            <tr>
+              <td>Abba Eban<br><em>Canciller de Israel</em></td>
+              <td>Declaró en 1957 que el objetivo era inculcarles "espíritu occidental" y que no debían "arrastrarnos a un Oriente antinatural". Descrito en sus memorias y en registros parlamentarios.</td>
+            </tr>
+            <tr>
+              <td>Benjamin Netanyahu<br><em>Primer Ministro</em></td>
+              <td>En 2016, ante presión política interna, anunció que un test de ADN mostraba que su familia tenía raíces españolas — intento documentado de apropiarse de identidad sefardí para retener votos Mizrahim.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="source-tag">Fuente [8]: Shohat, Ella — "Sephardim in Israel: Zionism from the Standpoint of Its Jewish Victims". Social Text, No. 19/20, Duke University Press, 1988. Fuente [9]: Swirski, Shlomo — "Israel: The Oriental Majority". Zed Books, 1989. ISBN: 978-0862328252.</span>
+
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN 3 ===== -->
+  <div class="section-wrap" id="s3">
+    <div class="section-header">
+      <span class="section-num">3</span>
+      <span class="section-title">Gaza: Lo que Documentan los Organismos Internacionales (2023–2026)</span>
+    </div>
+    <div class="section-body">
+
+      <h3>Hechos documentados — tabla completa</h3>
+      <p>Lo que sigue no son opiniones ni interpretaciones. Son hechos recogidos por organismos internacionales, tribunales y organizaciones de derechos humanos con presencia en terreno.</p>
+
+      <p class="scroll-hint">← desliza para ver toda la tabla →</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Hecho documentado</th>
+              <th>Fuente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="red-row">
+              <td>01</td>
+              <td>Uso de <strong>fósforo blanco</strong> en zonas civiles densamente pobladas, incluyendo el puerto de Gaza y el norte de la franja. El fósforo blanco es un arma incendiaria que provoca quemaduras profundas hasta los huesos y es ilegal usarla en zonas civiles.</td>
+              <td>Human Rights Watch, octubre 2023. ONU OCHA.</td>
+            </tr>
+            <tr>
+              <td>02</td>
+              <td>Niños fallecidos con <strong>impactos de bala en la cabeza y el torso</strong>, documentados por médicos internacionales en hospitales de Gaza y Cisjordania. Médicos Sin Fronteras describió el patrón como "disparos de precisión" contra civiles.</td>
+              <td>Médicos Sin Fronteras (MSF), 2023–2024. The Lancet, 2024.</td>
+            </tr>
+            <tr class="red-row">
+              <td>03</td>
+              <td>Destrucción de <strong>más del 60% de la infraestructura civil</strong> de Gaza, incluyendo hospitales, universidades, escuelas y sistemas de agua potable. Confirmado por imágenes satelitales de análisis independiente.</td>
+              <td>ONU OCHA. UNOSAT Satellite Imagery Analysis, 2024.</td>
+            </tr>
+            <tr>
+              <td>04</td>
+              <td><strong>Bloqueo deliberado de ayuda humanitaria y alimentos</strong> como parte de la estrategia militar, constituyendo potencialmente el uso del hambre como arma de guerra, lo cual está prohibido por el derecho internacional humanitario.</td>
+              <td>Relator Especial ONU sobre el derecho a la alimentación, 2024.</td>
+            </tr>
+            <tr class="red-row">
+              <td>05</td>
+              <td><strong>Violaciones sexuales y torturas</strong> documentadas contra detenidos palestinos en instalaciones militares israelíes, incluyendo el campo de detención de Sde Teiman.</td>
+              <td>ONU, Informe Comisión Internacional Independiente, 2024.</td>
+            </tr>
+            <tr>
+              <td>06</td>
+              <td>La <strong>Corte Internacional de Justicia (CIJ)</strong> falló el 26 de enero de 2024 que es "plausible" que Israel esté cometiendo genocidio contra el pueblo palestino en Gaza, en el caso presentado por Sudáfrica.</td>
+              <td>CIJ — Caso No. 192, Sudáfrica c. Israel. icj-cij.org.</td>
+            </tr>
+            <tr class="red-row">
+              <td>07</td>
+              <td>La <strong>Corte Penal Internacional (CPI)</strong> emitió en noviembre de 2024 órdenes de arresto contra Benjamin Netanyahu (Primer Ministro) y Yoav Gallant (exministro de Defensa) por crímenes de guerra y crímenes de lesa humanidad en Gaza. Los países signatarios del Estatuto de Roma están obligados a ejecutar la orden.</td>
+              <td>CPI — ICC-01/18, 21 noviembre 2024. icc-cpi.int.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="source-tag">Fuente [10]: Human Rights Watch — "Israel: White Phosphorus Used in Gaza, Lebanon", octubre 2023. hrw.org. Fuente [11]: CIJ — Fallo sobre medidas provisionales, 26 enero 2024. icj-cij.org. Fuente [12]: CPI — ICC-CPI-20241121-PR2024, noviembre 2024. icc-cpi.int. Fuente [18]: Médicos Sin Fronteras, informes de campo 2023-2024. msf.org/gaza. Fuente [20]: The Lancet — "Counting the dead in Gaza", Vol. 404, julio 2024.</span>
+
+      <h3>El debate sobre el genocidio: criterio jurídico y ético</h3>
+      <p>La <strong>Convención para la Prevención y la Sanción del Delito de Genocidio</strong> (ONU, 1948) define el genocidio como actos perpetrados con la <em>intención de destruir, total o parcialmente, a un grupo nacional, étnico, racial o religioso</em>. Los criterios incluyen: matanza de miembros del grupo, sometimiento a condiciones de vida calculadas para producir la destrucción física, y medidas destinadas a impedir el nacimiento de niños. La CIJ, en su fallo de enero 2024, consideró que Sudáfrica presentó evidencia suficiente para declarar "plausible" la comisión de genocidio. Independientemente del debate jurídico en curso, la selección de víctimas por identidad étnica, la destrucción sistemática de infraestructura civil y el bloqueo de alimentos configuran éticamente un patrón de exterminio.</p>
+      <span class="source-tag">Fuente [13]: ONU — Convención para la Prevención y la Sanción del Delito de Genocidio, 1948. Resolución 260 de la Asamblea General. un.org/en/genocideprevention.</span>
+
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN 4 ===== -->
+  <div class="section-wrap" id="s4">
+    <div class="section-header">
+      <span class="section-num">4</span>
+      <span class="section-title">Apartheid y Estado Colonial: Lo que Dice la Comunidad Internacional</span>
+    </div>
+    <div class="section-body">
+
+      <h3>El término "apartheid" en el derecho internacional</h3>
+      <p>El apartheid en derecho internacional no es solo una referencia histórica a Sudáfrica. Está tipificado como <strong>crimen de lesa humanidad</strong> en el Estatuto de Roma (artículo 7) y en la Convención Internacional sobre la Represión y el Castigo del Crimen de Apartheid (1973). Se define como todo acto inhumano cometido para establecer y mantener la dominación de un grupo racial sobre otro y suprimirlo sistemáticamente.</p>
+
+      <p class="scroll-hint">← desliza para ver toda la tabla →</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Organización</th>
+              <th>Año</th>
+              <th>Conclusión</th>
+              <th>Informe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="red-row">
+              <td>Amnistía Internacional</td>
+              <td>2022</td>
+              <td>Israel practica apartheid contra los palestinos tanto dentro de Israel como en los territorios ocupados. El sistema constituye un crimen de lesa humanidad.</td>
+              <td>"Israel's Apartheid against Palestinians: Cruel System of Domination and Crime Against Humanity". amnesty.org.</td>
+            </tr>
+            <tr>
+              <td>Human Rights Watch</td>
+              <td>2021</td>
+              <td>Las autoridades israelíes cometen los crímenes contra la humanidad de apartheid y persecución contra los palestinos. El umbral para esta calificación ha sido cruzado.</td>
+              <td>"A Threshold Crossed: Israeli Authorities and the Crimes of Apartheid and Persecution". hrw.org.</td>
+            </tr>
+            <tr class="red-row">
+              <td>B'Tselem<br><em>(organización israelí de DDHH)</em></td>
+              <td>2021</td>
+              <td>Israel es un Estado de supremacía judía desde el río Jordán hasta el mar Mediterráneo. Esto es apartheid. Esta conclusión proviene de la principal ONG israelí de derechos humanos.</td>
+              <td>"A regime of Jewish supremacy from the Jordan River to the Mediterranean Sea: This is apartheid". btselem.org.</td>
+            </tr>
+            <tr>
+              <td>Relator Especial ONU<br><em>Territorios Palestinos Ocupados</em></td>
+              <td>2022–presente</td>
+              <td>El Relator Especial ha utilizado sistemáticamente el término "apartheid" para describir el sistema israelí de control sobre los palestinos en los informes presentados ante la Asamblea General.</td>
+              <td>Informes anuales ante la Asamblea General ONU, 2022, 2023, 2024.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="source-tag">Fuente [14]: Amnistía Internacional — "Israel's Apartheid against Palestinians", 2022. Fuente [15]: Human Rights Watch — "A Threshold Crossed", 2021. Fuente [17]: B'Tselem — "A regime of Jewish supremacy", enero 2021. btselem.org.</span>
+
+    </div>
+  </div>
+
+  <!-- ===== SECCIÓN 5 ===== -->
+  <div class="section-wrap" id="s5">
+    <div class="section-header">
+      <span class="section-num">5</span>
+      <span class="section-title">Influencia Política en Washington: el Lobby</span>
+    </div>
+    <div class="section-body">
+
+      <h3>AIPAC y el lobby pro-israelí</h3>
+      <p>El lobby pro-israelí en Washington no es una teoría conspirativa: es un hecho verificable a través de registros públicos de lobbying, datos presupuestarios del Congreso y análisis académicos ampliamente publicados. El <strong>American Israel Public Affairs Committee (AIPAC)</strong> opera como grupo de presión registrado y es uno de los mejor financiados del sistema político estadounidense.</p>
+
+      <p class="scroll-hint">← desliza para ver toda la tabla →</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Indicador observable</th>
+              <th>Dato verificable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primera visita oficial Trump 2025</td>
+              <td>Netanyahu fue el primer líder extranjero recibido por Trump en su segundo mandato (enero 2025). En protocolo diplomático, el orden de visitas tiene significado político concreto.</td>
+            </tr>
+            <tr class="red-row">
+              <td>Blindaje presupuestario</td>
+              <td>La ayuda militar a Israel fue blindada en el presupuesto de la administración Trump 2025 mientras se recortaban programas de ayuda exterior en América Latina, África y programas humanitarios internacionales.</td>
+            </tr>
+            <tr>
+              <td>Registro de lobbying</td>
+              <td>AIPAC está registrado ante el Congreso. Sus donaciones a candidatos de ambos partidos están documentadas en opensecrets.org (Centro para la Política Responsable, base de datos pública).</td>
+            </tr>
+            <tr class="red-row">
+              <td>Análisis académico de referencia</td>
+              <td>Mearsheimer y Walt, dos académicos de las universidades de Chicago y Harvard, publicaron en 2007 el análisis más completo sobre el lobby israelí. El libro fue primero censurado en EE.UU. y luego publicado por Farrar, Straus and Giroux tras su éxito en el Reino Unido.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span class="source-tag">Fuente [16]: Mearsheimer, John J. y Walt, Stephen M. — "The Israel Lobby and U.S. Foreign Policy". Farrar, Straus and Giroux, 2007. ISBN: 978-0374531508. Registro AIPAC: opensecrets.org.</span>
+
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ===== CONCLUSIONS ===== -->
+<div class="conclusions" id="conclusiones">
+  <div class="container">
+    <h2>Conclusiones</h2>
+    <div class="conclusion-item">
+      <span class="c-num">1</span>
+      <span class="c-text">El Estado de Israel fue fundado principalmente por judíos Ashkenazis de origen europeo, no por los grupos judíos históricamente presentes en Oriente Medio (Mizrahim y Sefardíes), quienes son genéticamente los más cercanos a los palestinos.</span>
+    </div>
+    <div class="conclusion-item">
+      <span class="c-num">2</span>
+      <span class="c-text">El Sionismo Revisionista, ideología de la familia Netanyahu por tres generaciones, es la rama más expansionista y militarista del sionismo, catalogada como cercana al fascismo por sus propios contemporáneos israelíes, incluyendo a Ben-Gurion.</span>
+    </div>
+    <div class="conclusion-item">
+      <span class="c-num">3</span>
+      <span class="c-text">Los palestinos y los Mizrahim comparten una ascendencia genética semítica más cercana entre sí que con los Ashkenazis fundadores del Estado, lo que convierte la acusación de "antisemitismo" contra los palestinos en una paradoja histórica documentada.</span>
+    </div>
+    <div class="conclusion-item">
+      <span class="c-num">4</span>
+      <span class="c-text">Las principales instituciones jurídicas internacionales — CIJ, CPI, relatorías de la ONU — han documentado crímenes de guerra, crímenes de lesa humanidad y la plausibilidad jurídica de genocidio en Gaza. Netanyahu tiene orden de arresto internacional vigente.</span>
+    </div>
+    <div class="conclusion-item">
+      <span class="c-num">5</span>
+      <span class="c-text">El apartheid israelí sobre los palestinos ha sido reconocido por Amnistía Internacional, Human Rights Watch, B'Tselem (la principal ONG israelí de DDHH) y el Relator Especial de la ONU, constituyendo según el Estatuto de Roma un crimen de lesa humanidad.</span>
+    </div>
+    <div class="conclusion-item">
+      <span class="c-num">6</span>
+      <span class="c-text">La influencia israelí en la política exterior estadounidense es un hecho verificable a través de registros públicos de lobbying, decisiones presupuestarias y análisis académicos de universidades de primer nivel como Chicago y Harvard.</span>
+    </div>
+  </div>
+</div>
+
+<div class="stripe"></div>
+
+<!-- ===== SOURCES ===== -->
+<div class="sources-section" id="fuentes">
+  <div class="container">
+    <h2>Referencias y Fuentes (20 fuentes)</h2>
+    <div class="source-item"><strong>[1]</strong> Mondoweiss — "Netanyahu's grandfather was a Zionist activist who changed family name". mondoweiss.net, 2012.</div>
+    <div class="source-item"><strong>[2]</strong> Ha'aretz — "Benzion Netanyahu: Father of the Nation?" haaretz.com, 2012.</div>
+    <div class="source-item"><strong>[3]</strong> Shlaim, Avi — "The Iron Wall: Israel and the Arab World". W.W. Norton & Company, 2000. ISBN: 978-0393321128.</div>
+    <div class="source-item"><strong>[4]</strong> Brenner, Lenni — "Zionism in the Age of the Dictators". Croom Helm, 1983. Disponible en: marxists.org.</div>
+    <div class="source-item"><strong>[5]</strong> Sand, Shlomo — "The Invention of the Jewish People". Verso Books, 2009. ISBN: 978-1844674220.</div>
+    <div class="source-item"><strong>[6]</strong> Ostrer, Harry — "Legacy: A Genetic History of the Jewish People". Oxford University Press, 2012. ISBN: 978-0195379617.</div>
+    <div class="source-item"><strong>[7]</strong> Behar, Doron M. et al. — "The genome-wide structure of the Jewish people". Nature, Vol. 466, pp. 238-242, 2010. DOI: 10.1038/nature09103.</div>
+    <div class="source-item"><strong>[8]</strong> Shohat, Ella — "Sephardim in Israel: Zionism from the Standpoint of Its Jewish Victims". Social Text, No. 19/20, Duke University Press, 1988.</div>
+    <div class="source-item"><strong>[9]</strong> Swirski, Shlomo — "Israel: The Oriental Majority". Zed Books, 1989. ISBN: 978-0862328252.</div>
+    <div class="source-item"><strong>[10]</strong> Human Rights Watch — "Israel: White Phosphorus Used in Gaza, Lebanon". hrw.org, 12 octubre 2023.</div>
+    <div class="source-item"><strong>[11]</strong> Corte Internacional de Justicia (CIJ) — Caso No. 192, Sudáfrica c. Israel. Fallo de medidas provisionales, 26 enero 2024. icj-cij.org.</div>
+    <div class="source-item"><strong>[12]</strong> Corte Penal Internacional (CPI) — ICC-CPI-20241121-PR2024. Órdenes de arresto contra Netanyahu y Gallant. 21 noviembre 2024. icc-cpi.int.</div>
+    <div class="source-item"><strong>[13]</strong> Naciones Unidas — Convención para la Prevención y la Sanción del Delito de Genocidio. Resolución 260 (III), 9 diciembre 1948. un.org.</div>
+    <div class="source-item"><strong>[14]</strong> Amnistía Internacional — "Israel's Apartheid against Palestinians: Cruel System of Domination and Crime Against Humanity". amnesty.org, 2022.</div>
+    <div class="source-item"><strong>[15]</strong> Human Rights Watch — "A Threshold Crossed: Israeli Authorities and the Crimes of Apartheid and Persecution". hrw.org, 2021.</div>
+    <div class="source-item"><strong>[16]</strong> Mearsheimer, John J. y Walt, Stephen M. — "The Israel Lobby and U.S. Foreign Policy". Farrar, Straus and Giroux, 2007. ISBN: 978-0374531508.</div>
+    <div class="source-item"><strong>[17]</strong> B'Tselem — "A regime of Jewish supremacy from the Jordan River to the Mediterranean Sea: This is apartheid". btselem.org, enero 2021.</div>
+    <div class="source-item"><strong>[18]</strong> Médicos Sin Fronteras (MSF) — Informes de campo Gaza 2023–2024. msf.org/gaza.</div>
+    <div class="source-item"><strong>[19]</strong> ONU OCHA — Informes humanitarios Gaza 2023–2024. ochaopt.org.</div>
+    <div class="source-item"><strong>[20]</strong> The Lancet — "Counting the dead in Gaza: difficult but essential". Vol. 404, julio 2024. DOI: 10.1016/S0140-6736(24)01169-3.</div>
+  </div>
+</div>
+
+<div class="footer">
+  Documento de libre circulación · Todos los datos son contrastables en las fuentes citadas · Febrero 2026
+</div>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.section-wrap').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Verdadero Motivo — Visas Chile</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo: #c0392b;
+    --oro: #d4a843;
+    --azul-oscuro: #0a0f1e;
+    --azul-med: #111827;
+    --azul-panel: #161d2e;
+    --texto: #e8e0d0;
+    --texto-dim: #8a8070;
+    --verde-china: #1a6b45;
+    --verde-bright: #27ae60;
+    --gris: #2a3245;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--azul-oscuro);
+    font-family: 'Space Mono', monospace;
+    color: var(--texto);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 48px 0 40px;
+    position: relative;
+    border-bottom: 1px solid #2a3245;
+    margin-bottom: 48px;
+  }
+
+  .header-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    animation: fadeIn 0.6s ease;
+  }
+
+  .header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 88px);
+    letter-spacing: 2px;
+    line-height: 0.95;
+    color: var(--texto);
+    margin-bottom: 16px;
+    animation: fadeIn 0.8s ease;
+  }
+
+  .header h1 span {
+    color: var(--rojo);
+  }
+
+  .header-sub {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--texto-dim);
+    font-weight: 300;
+    animation: fadeIn 1s ease;
+  }
+
+  .date-tag {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--oro);
+    border: 1px solid var(--oro);
+    padding: 4px 12px;
+    opacity: 0.8;
+  }
+
+  /* PRETEXTO vs REALIDAD */
+  .pretexto-realidad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .panel {
+    background: var(--azul-panel);
+    padding: 32px 28px;
+  }
+
+  .panel-left { border-left: 3px solid var(--texto-dim); }
+  .panel-right { border-left: 3px solid var(--rojo); }
+
+  .panel-label {
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+
+  .panel h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+
+  .panel-left h3 { color: var(--texto-dim); }
+  .panel-right h3 { color: var(--rojo); }
+
+  .panel p {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--texto-dim);
+    font-weight: 300;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: var(--oro);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gris);
+  }
+
+  /* FUNCIONARIOS */
+  .funcionarios {
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .func-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .func-card {
+    background: var(--azul-panel);
+    padding: 24px 20px;
+    border-top: 2px solid var(--rojo);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .func-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 60px; height: 60px;
+    background: var(--rojo);
+    opacity: 0.04;
+    border-radius: 50%;
+    transform: translate(20px, -20px);
+  }
+
+  .func-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--rojo);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .func-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: var(--texto);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .func-cargo {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--oro);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .func-ministerio {
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    color: var(--texto-dim);
+    font-style: italic;
+    border-top: 1px solid var(--gris);
+    padding-top: 10px;
+    margin-top: 6px;
+  }
+
+  /* TIMELINE INFRAESTRUCTURA */
+  .infra {
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+
+  .infra-item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .infra-left {
+    background: var(--azul-panel);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .infra-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .infra-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--texto);
+    margin-bottom: 4px;
+  }
+
+  .infra-empresa {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--verde-bright);
+    opacity: 0.9;
+  }
+
+  .infra-right {
+    background: var(--azul-panel);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .infra-stat {
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .infra-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--oro);
+    line-height: 1;
+  }
+
+  .infra-stat-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: var(--texto-dim);
+    text-transform: uppercase;
+  }
+
+  .infra-desc {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    color: var(--texto-dim);
+    line-height: 1.5;
+    font-weight: 300;
+    border-left: 1px solid var(--gris);
+    padding-left: 20px;
+  }
+
+  .infra-desc strong {
+    color: var(--texto);
+    font-weight: 600;
+  }
+
+  /* HIGHLIGHT CABLE */
+  .cable-highlight {
+    background: linear-gradient(135deg, #0d1f14 0%, #0a1520 100%);
+    border: 1px solid var(--verde-bright);
+    border-left: 4px solid var(--verde-bright);
+    padding: 28px 32px;
+    margin-bottom: 48px;
+    position: relative;
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+
+  .cable-highlight::before {
+    content: '★ EPICENTRO';
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    background: var(--verde-bright);
+    color: #000;
+    font-size: 9px;
+    letter-spacing: 3px;
+    padding: 2px 10px;
+    font-weight: 700;
+  }
+
+  .cable-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--verde-bright);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+
+  .cable-sub {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    color: var(--texto-dim);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .cable-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .cable-stat {
+    border-top: 1px solid var(--verde-bright);
+    padding-top: 12px;
+    opacity: 0.9;
+  }
+
+  .cable-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--verde-bright);
+  }
+
+  .cable-stat-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--texto-dim);
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* POR QUÉ IMPORTA */
+  .porque {
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.6s both;
+  }
+
+  .porque-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .porque-item {
+    background: var(--azul-panel);
+    padding: 24px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .porque-item:hover { border-color: var(--oro); }
+
+  .porque-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--oro);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .porque-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--oro);
+    margin-bottom: 8px;
+  }
+
+  .porque-text {
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    color: var(--texto-dim);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* CONCLUSION */
+  .conclusion {
+    background: linear-gradient(135deg, #180a0a 0%, #0a0f1e 100%);
+    border: 1px solid var(--rojo);
+    padding: 36px 40px;
+    margin-bottom: 40px;
+    position: relative;
+    animation: fadeUp 0.8s ease 0.7s both;
+  }
+
+  .conclusion-label {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .conclusion-text {
+    font-family: 'Crimson Pro', serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--texto);
+    font-weight: 300;
+  }
+
+  .conclusion-text strong {
+    color: var(--oro);
+    font-weight: 600;
+  }
+
+  /* KAST TRAP */
+  .kast-trap {
+    background: var(--azul-panel);
+    border-left: 3px solid var(--oro);
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.75s both;
+  }
+
+  .kast-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--oro);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .kast-text {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    color: var(--texto-dim);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .kast-text strong { color: var(--texto); font-weight: 600; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid var(--gris);
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--texto-dim);
+    opacity: 0.5;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MAP VISUAL */
+  .map-visual {
+    background: var(--azul-panel);
+    padding: 32px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeUp 0.8s ease 0.45s both;
+  }
+
+  .map-line {
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .map-node {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--verde-bright);
+    background: var(--azul-oscuro);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .map-node.china { border-color: var(--rojo); background: var(--rojo); }
+
+  .map-connector {
+    flex: 1;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--verde-bright) 0px, var(--verde-bright) 8px, transparent 8px, transparent 16px);
+    position: relative;
+  }
+
+  .map-connector::after {
+    content: 'CABLE SUBMARINO — 500M USD — HUAWEI/CHINA MOBILE';
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--verde-bright);
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
+  .map-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 0 16px;
+    color: var(--texto);
+    flex-shrink: 0;
+  }
+
+  .map-label.china-label { color: var(--rojo); }
+
+  @media (max-width: 680px) {
+    .pretexto-realidad { grid-template-columns: 1fr; }
+    .func-grid { grid-template-columns: 1fr; }
+    .infra-item { grid-template-columns: 1fr; }
+    .cable-stats { grid-template-columns: 1fr 1fr; }
+    .porque-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">▲ análisis geopolítico · chile · febrero 2026</div>
+    <h1>POR QUÉ<br>EE.UU. REVOCÓ<br><span>LAS VISAS</span></h1>
+    <div class="header-sub">La versión oficial no cuenta toda la historia</div>
+    <div class="date-tag">20 · FEB · 2026</div>
+  </div>
+
+  <!-- PRETEXTO vs REALIDAD -->
+  <div class="pretexto-realidad">
+    <div class="panel panel-left">
+      <div class="panel-label">// versión oficial</div>
+      <h3>El Pretexto</h3>
+      <p>El Departamento de Estado, vía Marco Rubio, acusó a tres funcionarios de "comprometer infraestructura crítica de telecomunicaciones y socavar la seguridad regional en el hemisferio."</p>
+    </div>
+    <div class="panel panel-right">
+      <div class="panel-label">// lo que hay detrás</div>
+      <h3>La Realidad</h3>
+      <p>Chile construyó, bajo el gobierno Boric, la mayor penetración de infraestructura estratégica china en un país latinoamericano aliado de EE.UU. — telecomunicaciones, transporte y energía.</p>
+    </div>
+  </div>
+
+  <!-- FUNCIONARIOS SANCIONADOS -->
+  <div class="funcionarios">
+    <div class="section-title">Los tres sancionados</div>
+    <div class="func-grid">
+      <div class="func-card">
+        <div class="func-num">01</div>
+        <div class="func-name">Juan Carlos Muñoz</div>
+        <div class="func-cargo">Ministro de Transportes y Telecomunicaciones</div>
+        <div class="func-ministerio">Responsable máximo de ambas políticas: cable submarino + flota eléctrica china</div>
+      </div>
+      <div class="func-card">
+        <div class="func-num">02</div>
+        <div class="func-name">Claudio Araya</div>
+        <div class="func-cargo">Subsecretario de Telecomunicaciones (SUBTEL)</div>
+        <div class="func-ministerio">Ejecutor directo del proyecto Chile–China Express con Huawei y China Mobile</div>
+      </div>
+      <div class="func-card">
+        <div class="func-num">03</div>
+        <div class="func-name">Guillermo Petersen</div>
+        <div class="func-cargo">Jefe de Gabinete SUBTEL</div>
+        <div class="func-ministerio">Coordinación operativa del acuerdo de telecomunicaciones con actores estatales chinos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CABLE EPICENTRO -->
+  <div class="cable-highlight">
+    <div class="cable-title">Chile–China Express</div>
+    <div class="cable-sub">El proyecto que detonó la sanción</div>
+    <p style="font-family:'Crimson Pro',serif;font-size:15px;color:var(--texto-dim);line-height:1.6;font-weight:300;">Cable de fibra óptica submarino que conecta directamente <strong style="color:var(--texto)">Valparaíso con Hong Kong</strong>. Los participantes: <strong style="color:var(--verde-bright)">China Mobile, HMN Technologies y Huawei Marine Networks</strong>. Para EE.UU., conectar el Pacífico directamente con China a través de infraestructura de Huawei equivale a ceder control de datos estratégicos del hemisferio occidental.</p>
+    <div class="cable-stats">
+      <div class="cable-stat">
+        <div class="cable-stat-num">$500M</div>
+        <div class="cable-stat-label">inversión USD estimada</div>
+      </div>
+      <div class="cable-stat">
+        <div class="cable-stat-num">3</div>
+        <div class="cable-stat-label">empresas estatales chinas involucradas</div>
+      </div>
+      <div class="cable-stat">
+        <div class="cable-stat-num">15.000 km</div>
+        <div class="cable-stat-label">distancia Valparaíso–Hong Kong</div>
+      </div>
+      <div class="cable-stat">
+        <div class="cable-stat-num">HUAWEI</div>
+        <div class="cable-stat-label">proveedor — enemigo #1 de Washington</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUTA DEL CABLE VISUAL -->
+  <div class="map-visual">
+    <div class="section-title">Ruta estratégica</div>
+    <div class="map-line">
+      <div class="map-node"></div>
+      <div class="map-label">VALPARAÍSO<br><span style="font-size:9px;color:var(--texto-dim)">CHILE</span></div>
+      <div class="map-connector"></div>
+      <div class="map-label china-label">HONG KONG<br><span style="font-size:9px;color:var(--texto-dim)">CHINA</span></div>
+      <div class="map-node china"></div>
+    </div>
+    <p style="font-family:'Crimson Pro',serif;font-size:13px;color:var(--texto-dim);font-style:italic;margin-top:8px;opacity:0.8;">Para EE.UU. este cable no es comercial — es la puerta trasera de China al Pacífico Sur, controlada por empresas bajo supervisión del PCCh.</p>
+  </div>
+
+  <!-- INFRAESTRUCTURA CHINA EN CHILE -->
+  <div class="infra">
+    <div class="section-title">La penetración infraestructural completa</div>
+
+    <div class="infra-item">
+      <div class="infra-left">
+        <div class="infra-icon">🚌</div>
+        <div class="infra-title">Buses Eléctricos</div>
+        <div class="infra-empresa">BYD · FOTON · ZHONGTONG · YUTONG</div>
+      </div>
+      <div class="infra-right">
+        <div class="infra-stat">
+          <div class="infra-stat-num">4.400</div>
+          <div class="infra-stat-label">unidades para marzo 2026</div>
+        </div>
+        <div class="infra-desc">Santiago es la ciudad <strong>con más buses eléctricos del mundo fuera de China</strong>. El 100% de origen chino. Cada bus incorpora wifi, sensores, datos de movilidad urbana — infraestructura digital en movimiento.</div>
+      </div>
+    </div>
+
+    <div class="infra-item">
+      <div class="infra-left">
+        <div class="infra-icon">📡</div>
+        <div class="infra-title">Cable Submarino</div>
+        <div class="infra-empresa">HUAWEI MARINE · CHINA MOBILE · HMN TECH</div>
+      </div>
+      <div class="infra-right">
+        <div class="infra-stat">
+          <div class="infra-stat-num">$500M</div>
+          <div class="infra-stat-label">inversión total USD</div>
+        </div>
+        <div class="infra-desc">Conexión directa Valparaíso–Hong Kong. <strong>El golpe más sensible para Washington</strong>: control de tráfico de datos entre Sudamérica y Asia-Pacífico en manos de Huawei, empresa vinculada al Estado chino.</div>
+      </div>
+    </div>
+
+    <div class="infra-item">
+      <div class="infra-left">
+        <div class="infra-icon">🚇</div>
+        <div class="infra-title">Metro y Trenes</div>
+        <div class="infra-empresa">BYD · CRRC · TECNOLOGÍA CHINA</div>
+      </div>
+      <div class="infra-right">
+        <div class="infra-stat">
+          <div class="infra-stat-num">215 km</div>
+          <div class="infra-stat-label">red metro proyectada 2026</div>
+        </div>
+        <div class="infra-desc">Expansión del Metro de Santiago con tecnología china. Trenes livianos eléctricos BYD en ciudades intermedias. <strong>Infraestructura crítica de movilidad</strong> bajo estándares técnicos chinos.</div>
+      </div>
+    </div>
+
+    <div class="infra-item">
+      <div class="infra-left">
+        <div class="infra-icon">⚡</div>
+        <div class="infra-title">Red Eléctrica de Carga</div>
+        <div class="infra-empresa">56 ELECTROTERMINALES · ENEL X + BYD</div>
+      </div>
+      <div class="infra-right">
+        <div class="infra-stat">
+          <div class="infra-stat-num">56</div>
+          <div class="infra-stat-label">electro-terminales a fin 2025</div>
+        </div>
+        <div class="infra-desc">Infraestructura eléctrica de gran escala diseñada a medida de flotas chinas. Potencias de hasta <strong>15 MW por nodo</strong>. El Estado chileno construyó la red, los chinos proveen los vehículos y los estándares.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- POR QUÉ IMPORTA -->
+  <div class="porque">
+    <div class="section-title">Por qué esto importa geopolíticamente</div>
+    <div class="porque-grid">
+      <div class="porque-item">
+        <div class="porque-num">01</div>
+        <div class="porque-title">Datos de Movilidad Urbana</div>
+        <div class="porque-text">4.400 buses conectados transmiten datos de desplazamiento de millones de personas. Para inteligencia estratégica, eso es información de alto valor sobre patrones de comportamiento poblacional.</div>
+      </div>
+      <div class="porque-item">
+        <div class="porque-num">02</div>
+        <div class="porque-title">Control del Pacífico Sur</div>
+        <div class="porque-text">El cable Valparaíso–Hong Kong rompe el dominio estadounidense sobre las rutas de datos del Pacífico. Chile se convirtió en nodo alternativo fuera del esquema Five Eyes.</div>
+      </div>
+      <div class="porque-item">
+        <div class="porque-num">03</div>
+        <div class="porque-title">El Modelo Contagia</div>
+        <div class="porque-text">Brasil, Colombia, Perú y México observan el modelo chileno. Si Chile lo consolida, replica la lógica de penetración china a toda la región. EE.UU. cortó el ejemplo antes de que se fijara.</div>
+      </div>
+      <div class="porque-item">
+        <div class="porque-num">04</div>
+        <div class="porque-title">Timing: fin de gobierno</div>
+        <div class="porque-text">Sancionar ahora, con Boric saliente y Kast entrante, maximiza el impacto: castiga al que lo hizo, advierte a la región, y premia al aliado ideológico — todo en un solo movimiento.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAMPA KAST -->
+  <div class="kast-trap">
+    <div class="kast-title">⚠ La trampa estructural para Kast</div>
+    <div class="kast-text">Washington lo señala como aliado y le exige implícitamente revertir esta infraestructura. Pero el problema es que <strong>China compra el 40% de las exportaciones chilenas</strong>, principalmente cobre. Kast no puede desconectarse de China sin destruir la economía. EE.UU. le está pidiendo que elija — sin ofrecerle con qué reemplazar lo que perdería. <strong>Esa es la trampa.</strong></div>
+  </div>
+
+  <!-- CONCLUSIÓN -->
+  <div class="conclusion">
+    <div class="conclusion-label">// lectura final</div>
+    <div class="conclusion-text">
+      Las visas no son por ideología. Son por infraestructura. Chile construyó bajo Boric el <strong>ecosistema tecnológico chino más profundo de América Latina</strong> en un aliado occidental — telecomunicaciones, transporte, energía. Para Washington, eso no es política exterior: es una <strong>amenaza de seguridad nacional activa</strong>. Los funcionarios sancionados no hicieron declaraciones polémicas. Firmaron contratos con Huawei.
+    </div>
+  </div>
+
+  <div class="footer">
+    ANÁLISIS BASADO EN FUENTES PÚBLICAS · FEBRERO 2026 · USO INFORMATIVO
+  </div>
+
+</div>
+</body>
+</html>
