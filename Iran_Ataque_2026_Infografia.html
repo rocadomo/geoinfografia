@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Ataque a Irán — Análisis Geopolítico · 28 Feb 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --surface2: #1c1c1c;
+    --border: #2a2a2a;
+    --text: #e8e3db;
+    --text-muted: #7a7670;
+    --text-dim: #4a4844;
+    --accent: #c8a96e;
+    --accent2: #7a9e8e;
+    --danger: #b85450;
+    --warn: #c8834e;
+    --serif: 'EB Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,169,110,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.08;
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 640px;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-disclaimer {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    max-width: 580px;
+    line-height: 1.55;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .flags { font-size: 2rem; margin-bottom: 1.5rem; letter-spacing: 0.3rem; }
+
+  /* NAV */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,13,13,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+
+  .nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  .nav a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* SCROLL CTA */
+  .scroll-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: color 0.2s;
+  }
+
+  .scroll-cta:hover { color: var(--accent); }
+
+  .scroll-cta span { animation: bounce 2s infinite; display: inline-block; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  /* MAIN */
+  main { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+  /* STATS BLOCK */
+  .stats {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stats-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+  }
+
+  .stats-title {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .stat-box {
+    background: var(--surface);
+    padding: 2.2rem 1.8rem;
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .stat-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  /* SECTION */
+  section {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 2rem;
+  }
+
+  .section-title strong { font-weight: 600; }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .sub-title {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin: 2.5rem 0 1rem;
+  }
+
+  p { margin-bottom: 1.2rem; color: var(--text); }
+  p strong { color: var(--text); font-weight: 600; }
+
+  /* SOURCE INLINE */
+  .src {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+    font-family: var(--mono);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .tl-item {
+    padding: 0 0 2rem 2rem;
+    position: relative;
+  }
+
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0.5rem;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .tl-date {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .tl-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .tl-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-bottom: 0.3rem;
+  }
+
+  /* TABLE */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--border);
+  }
+
+  .table-scroll-hint {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 560px;
+  }
+
+  th {
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.9rem 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface); }
+
+  td strong { color: var(--text); }
+
+  /* CALLOUT BOXES */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+  }
+
+  .callout.danger { border-left-color: var(--danger); }
+  .callout.warn { border-left-color: var(--warn); }
+  .callout.info { border-left-color: var(--accent2); }
+
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .callout.danger .callout-label { color: var(--danger); }
+  .callout.warn .callout-label { color: var(--warn); }
+  .callout.info .callout-label { color: var(--accent2); }
+
+  .callout p { margin-bottom: 0; font-size: 0.95rem; }
+
+  /* ACTOR CARDS */
+  .actors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  .actor {
+    background: var(--surface);
+    padding: 1.8rem;
+  }
+
+  .actor-flag { font-size: 1.8rem; margin-bottom: 0.8rem; }
+
+  .actor-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .actor-role {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.8rem;
+  }
+
+  .actor-body {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* CONCLUSIONS */
+  .conclusion-list { list-style: none; margin: 2rem 0; }
+
+  .conclusion-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .conclusion-item:last-child { border-bottom: none; }
+
+  .c-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--border);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 2rem;
+    margin-top: 0.2rem;
+  }
+
+  .c-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .c-text strong { color: var(--accent); }
+
+  /* FINAL */
+  .final {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .final-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+  }
+
+  .final-text {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 700px;
+    color: var(--text);
+  }
+
+  .final-text em { font-style: italic; color: var(--accent); }
+
+  /* SOURCES */
+  .sources {
+    padding: 5rem 0;
+  }
+
+  .sources-title {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+  }
+
+  .source-item {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .source-item:last-child { border-bottom: none; }
+
+  .s-num {
+    font-family: var(--mono);
+    color: var(--accent);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    min-width: 2.5rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .hero h1 { font-size: 2.4rem; }
+    .stat-num { font-size: 2.8rem; }
+    .conclusion-item { flex-direction: column; gap: 0.5rem; }
+    .c-num { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">Análisis Geopolítico · 28 de Febrero de 2026</div>
+  <div class="flags">🇮🇱 · 🇺🇸 · 🇮🇷</div>
+  <h1>El Ataque a Irán: <em>Lo que los medios no contaron</em></h1>
+  <p class="hero-sub">
+    Cronología documentada del ataque de EE.UU. e Israel sobre Irán el 28 de febrero de 2026 — y los movimientos diplomáticos que lo hicieron posible.
+  </p>
+  <p class="hero-disclaimer">
+    Este documento es un análisis geopolítico basado en fuentes verificables. Su objetivo es el análisis histórico y estratégico, no la incitación. Todos los datos son contrastables en las fuentes citadas.
+  </p>
+  <a href="#nav" class="scroll-cta">Seguí leyendo <span>↓</span></a>
+</header>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#cronologia">1 · Cronología</a>
+    <a href="#por-que">2 · Por qué</a>
+    <a href="#diplomatico">3 · Lo diplomático</a>
+    <a href="#estrecho">4 · El Estrecho</a>
+    <a href="#actores">5 · Los actores</a>
+    <a href="#medios">6 · Los medios</a>
+    <a href="#conclusiones">Conclusiones</a>
+    <a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-label">En números</div>
+  <div class="stats-title">El análisis en cifras</div>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-num">3</div>
+      <div class="stat-desc">Guerras o ataques mayores de Israel a Irán entre 2024 y 2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">10</div>
+      <div class="stat-desc">Días del ultimátum de Trump a Irán que venció el 28 de febrero</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">20%</div>
+      <div class="stat-desc">Del petróleo mundial que pasa por el Estrecho de Ormuz</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">48h</div>
+      <div class="stat-desc">Antes del ataque Modi visitó Israel y firmó 17 acuerdos de defensa</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">$10B</div>
+      <div class="stat-desc">En acuerdos de armamento India–Israel firmados el 25-26 de febrero 2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">12</div>
+      <div class="stat-desc">Días duró la primera guerra Israel–Irán directa, en junio de 2025</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN 1: CRONOLOGÍA -->
+<section id="cronologia">
+  <div class="section-label">Sección 1</div>
+  <h2 class="section-title">Lo que pasó: <em>Cronología</em> documentada</h2>
+
+  <p>El ataque del 28 de febrero de 2026 no surgió de la nada. Hay una secuencia de eventos políticos, militares y diplomáticos que lo explican — y que los medios mayoritarios no presentaron como un relato continuo.</p>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-date">Octubre 2024</div>
+      <div class="tl-title">Operación Días de Arrepentimiento</div>
+      <div class="tl-body">Israel ataca sistemas de defensa aérea de Irán pero <strong>no toca las instalaciones nucleares</strong>. Los medios lo vendieron como un golpe devastador. Irán siguió enriqueciendo uranio.</div>
+      <div class="src">[1] Al Jazeera — "Israel strikes Iran in major escalation", octubre 2024</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">13–23 Junio 2025</div>
+      <div class="tl-title">La Guerra de los 12 Días — Operación León Ascendente</div>
+      <div class="tl-body">Israel lanza un ataque masivo sorpresa con más de 200 aviones de combate contra instalaciones nucleares, bases militares y comandantes del IRGC. EE.UU. bombardea directamente tres instalaciones nucleares iraníes. Trump declara el alto al fuego el 23 de junio.</div>
+      <div class="src">[2] Reuters — "US joins Israeli strikes on Iran nuclear sites", junio 2025 · [3] BBC — "Iran-Israel: The 12-day war", junio 2025</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Julio–Diciembre 2025</div>
+      <div class="tl-title">Irán vetó la supervisión nuclear del OIEA</div>
+      <div class="tl-body">Tras la guerra de los 12 días, Irán expulsa a los inspectores del Organismo Internacional de Energía Atómica y continúa el enriquecimiento de uranio. El problema que justificó el ataque de 2025 no fue resuelto.</div>
+      <div class="src">[4] IAEA Reports — "Iran refuses inspections", 2025</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">6–8 Enero 2026</div>
+      <div class="tl-title">China se reúne secretamente con Israel</div>
+      <div class="tl-body">El Enviado Especial chino para Medio Oriente, Zhai Jun, visita Israel y se reúne con el Canciller, el Director de Asuntos Políticos y el subjefe del Consejo de Seguridad Nacional israelí. Irán queda fuera del diálogo.</div>
+      <div class="src">[5] Times of Israel — "Chinese envoy meets Israeli officials", enero 2026</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2 Febrero 2026</div>
+      <div class="tl-title">India rompe con BRICS y firma con EE.UU.</div>
+      <div class="tl-body">India rompe con sus pares de BRICS y firma un acuerdo comercial con EE.UU. comprometiéndose a detener las compras de petróleo ruso. A cambio, EE.UU. rebaja los aranceles del 50% al 18%. India elige bando.</div>
+      <div class="src">[6] Financial Times — "India breaks BRICS ranks on oil", febrero 2026</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">19 Febrero 2026</div>
+      <div class="tl-title">Trump lanza un ultimátum de 10 días a Irán</div>
+      <div class="tl-body">Trump exige un acuerdo nuclear en 10 días o promete consecuencias militares. Irán rechaza negociar bajo amenaza. El plazo vence exactamente el 28 de febrero.</div>
+      <div class="src">[7] AP — "Trump gives Iran 10-day nuclear ultimatum", febrero 2026</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">25–26 Febrero 2026</div>
+      <div class="tl-title">Modi en Israel — 17 acuerdos de defensa</div>
+      <div class="tl-body">El primer ministro indio Modi visita Israel y es el primer PM indio en hablar ante el Knesset. Firma acuerdos de defensa por $10 mil millones incluyendo Iron Dome e Iron Beam. Netanyahu describe el "hexágono de alianzas" contra el eje iraní.</div>
+      <div class="src">[8] The Hindu — "Modi addresses Knesset, signs defence deals", febrero 2026 · [9] Haaretz — "Netanyahu presents 'hexagon of alliances'", febrero 2026</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">28 Febrero 2026 — HOY</div>
+      <div class="tl-title">🔴 Operación "Furia Épica" / "Rugido del León"</div>
+      <div class="tl-body">Israel y EE.UU. atacan Irán. Explosiones en Teherán, Qom, Isfahán, Kermanshah y Karaj. Irán responde con misiles contra objetivos en EAU, Bahrein y Qatar. Se suspenden vuelos en Dubai.</div>
+      <div class="src">[10] BBC Breaking — "US and Israel launch strikes on Iran", 28 febrero 2026 · [11] Al Jazeera — "Iran retaliates", 28 febrero 2026</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECCIÓN 2: POR QUÉ -->
+<section id="por-que">
+  <div class="section-label">Sección 2</div>
+  <h2 class="section-title">Por qué atacaron: <em>Las razones reales</em></h2>
+
+  <div class="sub-title">La razón declarada</div>
+  <p>La razón oficial es el programa nuclear iraní. Irán ha enriquecido uranio a niveles cercanos a los necesarios para una bomba atómica. El ultimátum de Trump venció sin acuerdo.</p>
+
+  <div class="callout warn">
+    <div class="callout-label">⚠ Contradicción documentada</div>
+    <p>Los ataques de 2024 y 2025 ya tenían como objetivo "detener el programa nuclear". Sin embargo, Irán continuó enriqueciendo uranio después de ambos. La pregunta es: ¿los ataques aéreos pueden realmente destruir instalaciones enterradas a 80 metros de profundidad como Fordow?</p>
+  </div>
+
+  <div class="sub-title">Las razones de fondo</div>
+
+  <div class="table-wrap">
+    <div class="table-scroll-hint">← desliza para ver toda la tabla →</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Descripción</th>
+          <th>Documentación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Programa nuclear</strong></td>
+          <td>Irán enriquece uranio al 60–90% según el OIEA. La bomba requiere ~90%. El margen es mínimo.</td>
+          <td>IAEA Reports 2025–2026</td>
+        </tr>
+        <tr>
+          <td><strong>Proxy warfare</strong></td>
+          <td>Irán financia y arma a Hezbollah, Hamas y los Houthis. Estos grupos han atacado a Israel repetidamente desde 2023.</td>
+          <td>Council on Foreign Relations, 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Ventana de oportunidad</strong></td>
+          <td>Con Hezbollah y Hamas muy debilitados tras las guerras de 2023–2025, Israel ve el momento más propicio para atacar a Irán sin respuesta de proxy tan fuerte.</td>
+          <td>RAND Corporation, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Presión política de Netanyahu</strong></td>
+          <td>Netanyahu enfrenta órdenes de arresto de la CPI desde noviembre 2024. Una guerra existencial puede consolidar apoyo interno.</td>
+          <td>CPI — ICC-01/18, noviembre 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Vulnerabilidad de Trump</strong></td>
+          <td>El caso Epstein y las listas asociadas siguen sin resolverse. Un presidente con vulnerabilidades políticas es más fácil de presionar.</td>
+          <td>Análisis político, The Guardian 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: LO DIPLOMÁTICO -->
+<section id="diplomatico">
+  <div class="section-label">Sección 3</div>
+  <h2 class="section-title">El tablero <em>diplomático</em> previo al ataque</h2>
+
+  <p>Lo que ningún medio presentó como relato continuo es que hubo una preparación diplomática explícita semanas antes del ataque.</p>
+
+  <div class="callout info">
+    <div class="callout-label">📐 Patrón documentado</div>
+    <p><strong>Enero 2026:</strong> China se reúne con Israel. <strong>2 Febrero:</strong> India abandona a Rusia en BRICS. <strong>25-26 Febrero:</strong> Modi firma alianza militar con Israel. <strong>28 Febrero:</strong> Ataque. En geopolítica no existe la casualidad.</p>
+  </div>
+
+  <div class="sub-title">India — La traición silenciosa a BRICS</div>
+  <p>India ocupa la presidencia de BRICS 2026 pero actuó de forma completamente contraria a los intereses del bloque: abandonó el petróleo ruso bajo presión de Trump, firmó $10B en armamento con Israel, y su primer ministro fue a hablar ante el Knesset días antes del ataque. <strong>India eligió bando</strong> con discreción quirúrgica.</p>
+  <div class="src">[6] Financial Times · [8] The Hindu · [9] Haaretz, 2026</div>
+
+  <div class="sub-title">China — La señal más enigmática</div>
+  <p>China también realizó ejercicios navales conjuntos con Irán y Rusia en el Estrecho de Ormuz (Maritime Security Belt 2026) como advertencia. Pero paralelamente mantuvo reuniones diplomáticas con Israel en enero. Irán sintió el abandono chino ya en la guerra de junio 2025, cuando los suministros de armas y el apoyo prometido no llegaron.</p>
+  <div class="src">[5] Times of Israel · [12] South China Morning Post, 2025–2026</div>
+
+  <div class="callout danger">
+    <div class="callout-label">🔴 La pregunta que nadie hace</div>
+    <p>Si existían canales diplomáticos activos a través de Omán — el intermediario histórico entre EE.UU. e Irán — y todos los actores lo sabían, ¿por qué atacaron igual? Eso sugiere que alguien <strong>no quería que hubiera negociación</strong>. Y ese alguien no era necesariamente Trump.</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: EL ESTRECHO -->
+<section id="estrecho">
+  <div class="section-label">Sección 4</div>
+  <h2 class="section-title">El Estrecho de Ormuz: <em>La bomba económica</em></h2>
+
+  <p>En toda la cobertura mediática del ataque, el Estrecho de Ormuz apareció como dato marginal. Es en realidad <strong>el factor más determinante del conflicto</strong>.</p>
+
+  <div class="table-wrap">
+    <div class="table-scroll-hint">← desliza para ver toda la tabla →</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Dato</th>
+          <th>Cifra</th>
+          <th>Impacto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Petróleo mundial que transita el Estrecho</strong></td>
+          <td>20–30% del total global</td>
+          <td>Cierre = shock energético inmediato mundial</td>
+        </tr>
+        <tr>
+          <td><strong>GNL del Golfo que depende del Estrecho</strong></td>
+          <td>~60% del GNL de la región</td>
+          <td>Europa y Asia sin gas suficiente en horas</td>
+        </tr>
+        <tr>
+          <td><strong>Precio estimado del petróleo si se cierra</strong></td>
+          <td>$150–200 por barril</td>
+          <td>Recesión global en semanas</td>
+        </tr>
+        <tr>
+          <td><strong>País que controla la orilla sur</strong></td>
+          <td>Omán</td>
+          <td>Mediador histórico con relaciones con todos los actores</td>
+        </tr>
+        <tr>
+          <td><strong>Misiles costeros antibuque de Irán</strong></td>
+          <td>Sistema Noor + Khalij Fars</td>
+          <td>Pueden hundir buques de guerra sin bomba nuclear</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Análisis estratégico</div>
+    <p>Irán no necesita ganar militarmente. Solo necesita <strong>cerrar el Estrecho de Ormuz</strong> durante 2 semanas para producir un daño económico global que fuerce una negociación. La bomba nuclear es la narrativa mediática. El Estrecho es el arma real.</p>
+  </div>
+
+  <div class="sub-title">Omán — La llave que nadie nombra</div>
+  <p>Omán controla la orilla sur del Estrecho. Es aliado de Occidente pero mantiene relaciones diplomáticas históricas con Irán. Ha sido el canal secreto de negociación entre EE.UU. e Irán durante décadas — incluyendo las negociaciones del acuerdo nuclear de 2015. Su silencio actual es elocuente.</p>
+
+  <div class="callout warn">
+    <div class="callout-label">El triángulo que puede detener la guerra</div>
+    <p><strong>Omán + India + China</strong> son los tres actores que tienen relaciones con Irán, tienen todo que perder si el Estrecho cierra, y tienen la credibilidad que EE.UU. e Israel no tienen ahora mismo. Una mediación Asia-Golfo es la única salida realista que ningún medio está discutiendo.</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: ACTORES -->
+<section id="actores">
+  <div class="section-label">Sección 5</div>
+  <h2 class="section-title">Los <em>actores</em> y sus intereses reales</h2>
+
+  <div class="actors">
+    <div class="actor">
+      <div class="actor-flag">🇮🇱</div>
+      <div class="actor-name">Israel</div>
+      <div class="actor-role">Atacante principal</div>
+      <div class="actor-body">Objetivo declarado: el programa nuclear. Objetivo real: eliminar la amenaza existencial iraní y sus proxy. Netanyahu enfrenta orden de arresto de la CPI. Una guerra existencial consolida poder interno.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🇺🇸</div>
+      <div class="actor-name">EE.UU. / Trump</div>
+      <div class="actor-role">Apoyo militar directo</div>
+      <div class="actor-body">Trump lanzó el ultimátum y participó directamente. Con el caso Epstein sin resolver y presión israelí histórica, se ejecutó el ataque. "Operación Furia Épica" como nombre oficial.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🇮🇷</div>
+      <div class="actor-name">Irán</div>
+      <div class="actor-role">Atacado — responde</div>
+      <div class="actor-body">Régimen acorralado, abandonado por China y Rusia. Un régimen que siente que muere no tiene los mismos incentivos racionales que uno que quiere sobrevivir. El martirio es parte de su marco ideológico.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🇨🇳</div>
+      <div class="actor-name">China</div>
+      <div class="actor-role">Palco — pero con límites</div>
+      <div class="actor-body">Realizó ejercicios navales con Irán (advertencia) pero también se reunió con Israel en enero. Si el Estrecho cierra, China pierde su suministro de petróleo. En ese punto abandona el palco.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🇷🇺</div>
+      <div class="actor-name">Rusia</div>
+      <div class="actor-role">Palco — beneficiario</div>
+      <div class="actor-body">Ocupada en Ucrania. El caos en Oriente Medio le conviene: sube el precio del petróleo ruso, distrae a EE.UU. Sin incentivos para intervenir directamente.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🇮🇳</div>
+      <div class="actor-name">India</div>
+      <div class="actor-role">Eligió bando — Occidente</div>
+      <div class="actor-body">Abandonó el petróleo ruso por acuerdo con EE.UU., firmó $10B en armamento con Israel 48 horas antes del ataque. Preside BRICS pero actúa contra los intereses del bloque. Movimiento estratégico calculado.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🇴🇲</div>
+      <div class="actor-name">Omán</div>
+      <div class="actor-role">La llave diplomática</div>
+      <div class="actor-body">Controla la orilla sur del Estrecho de Ormuz. Canal histórico de negociación entre EE.UU. e Irán. Su neutralidad activa es el único espacio real para una salida negociada.</div>
+    </div>
+    <div class="actor">
+      <div class="actor-flag">🌍</div>
+      <div class="actor-name">Economía global</div>
+      <div class="actor-role">La víctima silenciosa</div>
+      <div class="actor-body">Si el Estrecho de Ormuz se cierra, el precio del petróleo puede superar los $200. La recesión global no es un escenario teórico — es la consecuencia matemática más probable.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 6: LOS MEDIOS -->
+<section id="medios">
+  <div class="section-label">Sección 6</div>
+  <h2 class="section-title">El fallo de <em>los medios</em>: la narrativa del golpe definitivo</h2>
+
+  <p>Desde octubre 2024, cada vez que Israel atacó a Irán, los grandes medios construyeron la misma narrativa: <strong>golpe decisivo, Irán debilitado, problema resuelto</strong>. Nunca fue cierto. Y la pregunta que nunca se hizo es la más simple:</p>
+
+  <div class="callout">
+    <div class="callout-label">La pregunta que nadie formuló</div>
+    <p><em>"¿Se atacaron las instalaciones nucleares subterráneas? No. Entonces, ¿qué se resolvió exactamente?"</em></p>
+  </div>
+
+  <div class="sub-title">Por qué la narrativa fue exagerada — intereses documentados</div>
+
+  <div class="table-wrap">
+    <div class="table-scroll-hint">← desliza para ver toda la tabla →</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Actor</th>
+          <th>Interés en la narrativa del "golpe decisivo"</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Israel</strong></td>
+          <td>Necesita mostrar a su población que respondieron con contundencia. La imagen de victoria interna tiene valor político inmediato.</td>
+        </tr>
+        <tr>
+          <td><strong>EE.UU.</strong></td>
+          <td>Convenía que pareciera "resuelto" para no tener que tomar decisiones más difíciles ni escaladas en campaña electoral.</td>
+        </tr>
+        <tr>
+          <td><strong>Medios masivos</strong></td>
+          <td>Muchos repitieron el comunicado oficial sin verificación independiente. No había corresponsales en Irán para contrastar. El sensacionalismo vende.</td>
+        </tr>
+        <tr>
+          <td><strong>Ausencia de contexto</strong></td>
+          <td>Nunca se presentó como relato continuo: ataques 2024 → guerra 2025 → India + China → ultimátum → ataque 2026. El contexto conectado cambia toda la lectura.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>El fallo del periodismo de seguimiento no es un accidente. Es estructural: la cobertura de conflictos tiende a episodios aislados en lugar de narrativas causales. Eso beneficia a quienes controlan la narrativa oficial.</p>
+</section>
+
+<!-- CONCLUSIONES -->
+<section id="conclusiones">
+  <div class="section-label">Conclusiones</div>
+  <h2 class="section-title">Lo que queda en pie</h2>
+
+  <ul class="conclusion-list">
+    <li class="conclusion-item">
+      <div class="c-num">1</div>
+      <div class="c-text">El ataque del 28 de febrero de 2026 no fue espontáneo. Fue el resultado de una <strong>preparación diplomática de meses</strong> que incluyó reuniones China-Israel en enero, la visita de Modi en febrero, y el abandono de Irán por sus aliados.</div>
+    </li>
+    <li class="conclusion-item">
+      <div class="c-num">2</div>
+      <div class="c-text">Los ataques anteriores de 2024 y 2025 <strong>nunca resolvieron el problema nuclear</strong>. Las instalaciones están enterradas a gran profundidad. Cada "victoria" mediática fue incompleta y los medios no lo dijeron con claridad.</div>
+    </li>
+    <li class="conclusion-item">
+      <div class="c-num">3</div>
+      <div class="c-text">El <strong>Estrecho de Ormuz</strong> es el factor más importante del conflicto y el menos cubierto. Irán no necesita la bomba nuclear para producir daño catastrófico: solo necesita cerrar ese canal 2 semanas.</div>
+    </li>
+    <li class="conclusion-item">
+      <div class="c-num">4</div>
+      <div class="c-text"><strong>India traicionó a BRICS</strong> silenciosamente. Preside el bloque en 2026 pero abandonó el petróleo ruso, firmó $10B con Israel y visitó el Knesset 48 horas antes del ataque. Es el movimiento geopolítico más subestimado de la crisis.</div>
+    </li>
+    <li class="conclusion-item">
+      <div class="c-num">5</div>
+      <div class="c-text">Un régimen acorralado que siente que muere <strong>no responde con la lógica de supervivencia</strong> que asume la disuasión nuclear clásica. El marco ideológico iraní incluye el martirio. Atacar a un régimen en colapso puede producir exactamente lo que se quería evitar.</div>
+    </li>
+    <li class="conclusion-item">
+      <div class="c-num">6</div>
+      <div class="c-text">La única salida negociada realista pasa por <strong>Omán + India + China</strong> — un triángulo que tiene relaciones con Irán, intereses directos en que el Estrecho no cierre, y credibilidad que Occidente ya no tiene. Nadie lo está discutiendo en los medios masivos.</div>
+    </li>
+  </ul>
+</section>
+
+<!-- ANÁLISIS FINAL -->
+<div class="final">
+  <div class="final-label">Análisis Final</div>
+  <p class="final-text">
+    Tres ataques en dos años, seis actores con agendas propias, un estrecho que mueve el 20% del petróleo mundial. Lo que los medios presentaron como episodios aislados es en realidad una secuencia continua con una lógica interna clara. <em>La pregunta que queda</em> no es si habrá escalada — es quién tendrá la voluntad política de abrir el canal diplomático antes de que el cálculo cambie de forma irreversible.
+  </p>
+</div>
+
+<!-- FUENTES -->
+<div class="sources" id="fuentes">
+  <div class="sources-title">12 fuentes verificadas</div>
+
+  <div class="source-item">
+    <div class="s-num">[1]</div>
+    <div>Al Jazeera — "Israel strikes Iran in major escalation". aljazeera.com, octubre 2024.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[2]</div>
+    <div>Reuters — "US joins Israeli strikes on Iran nuclear sites". reuters.com, junio 2025.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[3]</div>
+    <div>BBC News — "Iran-Israel: The 12-day war explained". bbc.com, junio 2025.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[4]</div>
+    <div>International Atomic Energy Agency (IAEA) — Reports on Iran Nuclear Activity 2025–2026. iaea.org.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[5]</div>
+    <div>Times of Israel — "Chinese envoy Zhai Jun meets top Israeli officials". timesofisrael.com, enero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[6]</div>
+    <div>Financial Times — "India breaks BRICS ranks with US oil deal". ft.com, febrero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[7]</div>
+    <div>Associated Press — "Trump gives Iran 10-day nuclear ultimatum". apnews.com, 19 febrero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[8]</div>
+    <div>The Hindu — "PM Modi addresses Israeli Knesset, signs 17 defence agreements". thehindu.com, febrero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[9]</div>
+    <div>Haaretz — "Netanyahu presents 'hexagon of alliances' against Iranian axis". haaretz.com, febrero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[10]</div>
+    <div>BBC Breaking News — "US and Israel launch strikes on Iran — live". bbc.com, 28 febrero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[11]</div>
+    <div>Al Jazeera — "Iran retaliates against US and Israeli targets across the Gulf". aljazeera.com, 28 febrero 2026.</div>
+  </div>
+  <div class="source-item">
+    <div class="s-num">[12]</div>
+    <div>South China Morning Post — "China's Iran dilemma: ally abandoned as Beijing courts Israel". scmp.com, 2025–2026.</div>
+  </div>
+
+</div>
+
+</main>
+
+<footer>
+  Documento de libre circulación · Todos los datos son contrastables en las fuentes citadas · Análisis Geopolítico · Febrero 2026
+  <br><br>
+  <a href="https://rocadomo.github.io/geoinfografia/Israel_Sionismo_Infografia.html" style="color: var(--accent); text-decoration: none; font-family: var(--mono);">← Ver infografía anterior: Israel, Sionismo y el Conflicto</a>
+</footer>
+
+</body>
+</html>
