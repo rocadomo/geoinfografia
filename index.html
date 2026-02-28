@@ -148,6 +148,7 @@
   .card:nth-child(1) { animation-delay: 0.3s; }
   .card:nth-child(2) { animation-delay: 0.45s; }
   .card:nth-child(3) { animation-delay: 0.6s; }
+  .card:nth-child(4) { animation-delay: 0.75s; }
 
   .card:hover {
     background: var(--card2);
@@ -162,15 +163,30 @@
     transition: opacity 0.3s;
   }
 
-  .card-trump::before { background: linear-gradient(90deg, var(--gold), var(--red)); }
+  .card-trump::before  { background: linear-gradient(90deg, var(--gold), var(--red)); }
   .card-israel::before { background: linear-gradient(90deg, var(--blue), var(--red)); }
-  .card-chile::before { background: linear-gradient(90deg, var(--red), var(--gold)); }
+  .card-chile::before  { background: linear-gradient(90deg, var(--red), var(--gold)); }
+  .card-iran::before   { background: linear-gradient(90deg, var(--red), #7b2d2d); }
 
   .card-eyebrow {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 10px;
     letter-spacing: 4px;
     color: var(--muted);
+  }
+
+  /* Badge NUEVO */
+  .card-new {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--bg);
+    background: var(--red);
+    padding: 3px 8px;
+    text-transform: uppercase;
   }
 
   .card-flag { font-size: 2rem; }
@@ -182,9 +198,10 @@
     line-height: 1.1;
   }
 
-  .card-trump .card-title span { color: var(--gold); }
+  .card-trump .card-title span  { color: var(--gold); }
   .card-israel .card-title span { color: var(--blue); }
-  .card-chile .card-title span { color: var(--red); }
+  .card-chile .card-title span  { color: var(--red); }
+  .card-iran .card-title span   { color: var(--red); }
 
   .card-desc {
     color: var(--muted);
@@ -247,6 +264,16 @@
   <div class="section-label">Publicaciones</div>
   <div class="cards-grid">
 
+    <!-- NUEVA — va primero por ser la más reciente -->
+    <a href="Iran_Ataque_2026_Infografia.html" class="card card-iran">
+      <div class="card-new">Nuevo</div>
+      <div class="card-eyebrow">Geopolítica · Oriente Medio</div>
+      <div class="card-flag">🇮🇱 🇺🇸 🇮🇷</div>
+      <div class="card-title">El <span>Ataque a Irán</span>:<br>Lo que no contaron</div>
+      <div class="card-desc">Cronología del ataque del 28 de febrero de 2026 — y los movimientos diplomáticos de China, India y Omán que lo hicieron posible. El Estrecho de Ormuz como arma real.</div>
+      <div class="card-cta">Leer análisis</div>
+    </a>
+
     <a href="infografia-trump-china.html" class="card card-trump">
       <div class="card-eyebrow">Economía · Guerra Comercial</div>
       <div class="card-flag">🇺🇸 🇨🇳</div>
@@ -275,7 +302,7 @@
 </div>
 
 <footer>
-  Geoinfografías · Datos al 22 de Febrero 2026 · Uso informativo
+  Geoinfografías · Datos al 28 de Febrero 2026 · Uso informativo
 </footer>
 
 </body>
